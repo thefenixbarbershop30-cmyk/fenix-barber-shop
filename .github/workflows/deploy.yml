@@ -2,9 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -22,24 +20,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-      
+          cache: "npm"
+
       - name: Install dependencies
         run: npm ci
-      
-      - name: Build static site
+
+      - name: Build
         run: npm run build:static
         env:
           NODE_ENV: production
-      
-      - name: Create 404.html for SPA routing
+
+      - name: Copy index.html to 404.html
         run: cp dist/index.html dist/404.html
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
