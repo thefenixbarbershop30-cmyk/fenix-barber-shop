@@ -339,6 +339,26 @@ export default function Home() {
               </div>
             </Card>
 
+            {/* Corte Normal Nuevo */}
+            <Card className="service-card bg-card overflow-hidden flex flex-col md:flex-row" data-testid="card-servicio-corte-normal-nuevo">
+              <div className="md:w-1/2">
+                <img src={corteNormalImg} alt="Corte Normal - Servicio profesional de barbería" 
+                     className="w-full h-64 md:h-full object-cover" data-testid="img-corte-normal-nuevo" />
+              </div>
+              <div className="md:w-1/2 p-6 flex flex-col justify-center">
+                <h4 className="text-2xl font-bold text-golden mb-2" data-testid="text-nombre-corte-normal-nuevo">Corte Normal</h4>
+                <p className="text-3xl font-bold text-foreground mb-4" data-testid="text-precio-corte-normal-nuevo">12€</p>
+                <p className="text-muted-foreground mb-6" data-testid="text-descripcion-corte-normal-nuevo">
+                  Corte clásico profesional adaptado a tu estilo personal con acabado impecable.
+                </p>
+                <a href={bookingUrl} target="_blank" rel="noopener noreferrer"
+                   className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors inline-flex items-center justify-center"
+                   data-testid="button-reservar-corte-normal-nuevo">
+                  <i className="fas fa-calendar-plus mr-2"></i>Reservar Cita
+                </a>
+              </div>
+            </Card>
+
             {/* Corte y Barba */}
             <Card className="service-card bg-card overflow-hidden flex flex-col md:flex-row" data-testid="card-servicio-corte-barba">
               <div className="md:w-1/2">
