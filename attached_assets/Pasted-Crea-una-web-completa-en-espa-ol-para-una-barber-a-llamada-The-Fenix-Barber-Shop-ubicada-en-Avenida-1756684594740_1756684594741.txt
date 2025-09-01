@@ -1,0 +1,144 @@
+Crea una web completa en español para una barbería llamada The Fenix Barber Shop, ubicada en Avenida Espinela 5, Madrid. La web debe seguir la misma estructura y orden visual que esta referencia: https://sites.google.com/view/barberialpha/inicio. Asegúrate de que sea moderna, responsiva (móvil/desktop), accesible y optimizada para SEO básico.
+
+Instrucciones generales de diseño
+
+Estética: estilo masculino, elegante y moderno. Paleta sugerida: oscuros (negro/gris carbón) + acentos dorados/cobre. Tipografía limpia y legible (sans-serif).
+
+Layout: Header con logo/nombre y botón destacado “Reservar cita”, secciones equivalentes a la web de referencia (Inicio, Nuestro equipo, Servicios y precios, Reservar cita, Contacto / Footer).
+
+Responsivo: columnas que se adaptan; tarjetas de equipo y galería de servicios que se reordenan en móvil.
+
+Accesibilidad: textos con contraste suficiente, alt en todas las imágenes, etiquetas ARIA donde proceda.
+
+SEO: meta title y description en español, etiquetas Open Graph para compartir, lang="es" en el HTML.
+
+Map / Localización: incluir mapa embebido (Google Maps) con la dirección Avenida Espinela 5, Madrid y un botón para abrir en Google Maps.
+
+No publicar imágenes automáticamente: dejar marcadores/placeholder donde el usuario subirá las fotos en Replit (ej.: /assets/team/carlos.jpg y /assets/services/corte-normal.jpg) y mostrar un texto pequeño “imagen pendiente — subir en Replit”.
+
+Contenido (textos exactos a usar)
+Header / Inicio
+
+Nombre visible: The Fenix Barber Shop
+
+Dirección: Avenida Espinela 5, Madrid
+
+Horario: 10:00 am – 9:00 pm
+
+Botón principal: Reservar cita → debe abrir https://forms.gle/FENPCuGqra2w64VJ9 en nueva pestaña.
+
+Incluir un hero con frase corta: “Estilo urbano. Precisión profesional.” y un botón secundario “Nuestro equipo” que lleve a la sección correspondiente.
+
+Nuestro equipo
+
+Presenta a cada barbero en tarjetas con foto (placeholder), nombre, especialidad, Instagram y teléfono (tel: links clicables). Mostrar en este orden:
+
+Carlos Manuel
+
+Especialidad: experto en colorimetría y fades
+
+IG: @carlosbarber_92 (link a https://instagram.com/carlosbarber_92)
+
+Tel: +34 604 19 53 00 (link tel:+34604195300)
+
+Foto: placeholder /assets/team/carlos.jpg — yo subiré la foto en Replit.
+
+Kevin Elías
+
+Especialidad: fades y diseños
+
+IG: @velkan_es (link https://instagram.com/velkan_es)
+
+Tel: +34 673 86 22 18 (link tel:+34673862218)
+
+Foto: placeholder /assets/team/kevin.jpg
+
+Jail Smith
+
+Especialidad: fades y diseños
+
+IG: @blessed_hairdresser (link https://instagram.com/blessed_hairdresser)
+
+Tel: +34 643 35 23 44 (link tel:+34643352344)
+
+Foto: placeholder /assets/team/jail.jpg
+
+Davier Elías
+
+Especialidad: fades y diseños
+
+IG: @the_wawa_barber (link https://instagram.com/the_wawa_barber)
+
+Tel: +34 602 46 33 72 (link tel:+34602463372)
+
+Foto: placeholder /assets/team/davier.jpg
+
+Añadir micro-interacción: al pasar el cursor sobre cada tarjeta mostrar iconos para llamar y ver Instagram.
+
+Servicios y precios
+
+Lista con foto a la derecha o a la izquierda (placeholder por servicio) y texto con precio y notas. Indicar claramente que las fotos las subiré yo en Replit y usar placeholders como /assets/services/<nombre>.jpg.
+
+Corte Normal — 12 $
+
+Foto: /assets/services/corte-normal.jpg (placeholder)
+
+Corte y Barba — 17 $
+
+Foto: /assets/services/corte-barba.jpg (placeholder)
+
+Diseños — 2/5 $
+
+Foto: /assets/services/disenos.jpg (placeholder)
+
+Decoloración o Tinte — 50 $
+
+Foto: /assets/services/tinte.jpg (placeholder)
+
+Nota: Este servicio lo realiza exclusivamente Carlos Manuel.
+
+Mechas — 40 $
+
+Foto: /assets/services/mechas.jpg (placeholder)
+
+Nota: Este servicio lo realiza exclusivamente Carlos Manuel.
+
+Reservar cita
+
+Incrustar el formulario de Google o un botón grande que abra https://forms.gle/FENPCuGqra2w64VJ9 en nueva pestaña.
+
+Requisito crítico: TODOS los botones de la web con texto “Reservar cita” deben enlazar al formulario https://forms.gle/FENPCuGqra2w64VJ9. (Incluye los del header, hero, sección servicios y footer).
+
+Mostrar horario de atención cerca del formulario: 10:00 am – 9:00 pm.
+
+Footer
+
+Texto: The Fenix Barber Shop — Avenida Espinela 5, Madrid
+
+Teléfono principal (clicable): +34 604 19 53 00
+
+Horario: 10:00 am – 9:00 pm
+
+Iconos y enlaces a los Instagram de la barbería y de los barberos (si procede).
+
+Copyright y aviso sencillo: “© [Año actual] The Fenix Barber Shop”.
+
+Requerimientos técnicos y entrega
+
+Generar HTML/CSS/JS (o React single-file) listo para desplegar en Replit.
+
+Incluir comentarios en el código indicando dónde subiré las imágenes (ruta placeholder).
+
+Incluir instrucciones en un archivo README.md corto que explique cómo reemplazar los placeholders de imagen y dónde cambiar el horario/telefonos si es necesario.
+
+Todas las llamadas a acción “Reservar cita” deben abrir https://forms.gle/FENPCuGqra2w64VJ9 en nueva pestaña.
+
+Añadir meta tags SEO (title, description en español) y Open Graph.
+
+Validar que el footer y el mapa usen la dirección Avenida Espinela 5, Madrid.
+
+Notas finales para el creador/IA
+
+No subir imágenes automáticamente; dejar placeholders con texto visible “Imagen pendiente — subir en Replit”. Yo subiré las fotos de cada barbero y de los servicios en Replit después.
+
+Si generas un prototipo, devuélveme el código listo para importar en Replit o un archivo ZIP.
