@@ -58,7 +58,7 @@ export default function Home() {
     };
   }, []);
 
-  const bookingUrl = "https://forms.gle/FENPCuGqra2w64VJ9";
+  const bookingUrl = "https://forms.gle/p4kFSMwJJ99aegn37";
 
   return (
     <div className="min-h-screen bg-background text-foreground">
