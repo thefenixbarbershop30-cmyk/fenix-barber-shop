@@ -379,25 +379,6 @@ export default function Home() {
               </div>
             </Card>
 
-            {/* Diseños */}
-            <Card className="service-card bg-card overflow-hidden flex flex-col md:flex-row" data-testid="card-servicio-disenos">
-              <div className="md:w-1/2">
-                <img src={disenoImg} alt="Diseños - Arte capilar personalizado" 
-                     className="w-full h-64 md:h-full object-cover" data-testid="img-disenos" />
-              </div>
-              <div className="md:w-1/2 p-6 flex flex-col justify-center">
-                <h4 className="text-2xl font-bold text-golden mb-2" data-testid="text-nombre-disenos">Diseños</h4>
-                <p className="text-3xl font-bold text-foreground mb-4" data-testid="text-precio-disenos">2€ - 5€</p>
-                <p className="text-muted-foreground mb-6" data-testid="text-descripcion-disenos">
-                  Diseños personalizados y patrones únicos creados con precisión artística.
-                </p>
-                <a href={bookingUrl} target="_blank" rel="noopener noreferrer"
-                   className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors inline-flex items-center justify-center"
-                   data-testid="button-reservar-disenos">
-                  <i className="fas fa-calendar-plus mr-2"></i>Reservar Cita
-                </a>
-              </div>
-            </Card>
 
             {/* Decoloración o Tinte */}
             <Card className="service-card bg-card overflow-hidden flex flex-col md:flex-row" data-testid="card-servicio-tinte">
