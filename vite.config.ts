@@ -1,20 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { fileURLToPath } from "url";
-import { dirname, resolve } from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { resolve } from "path";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-export default defineConfig(async () => ({
-  base: process.env.NODE_ENV === "production" ? "/fenix-barber-shop/" : "/",
-  plugins: [
-    react(),
-    runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
-      ? [(await import("@replit/vite-plugin-cartographer")).cartographer()]
-      : []),
-  ],
+export default defineConfig({
+  base: "/fenix-barber-shop/", // 👈 ruta obligatoria para GitHub Pages
+  plugins: [react()],
   resolve: {
     alias: {
       "@": resolve(__dirname, "client", "src"),
@@ -24,14 +14,9 @@ export default defineConfig(async () => ({
   },
   root: resolve(__dirname, "client"),
   build: {
-    outDir: resolve(__dirname, "dist"), // 👈 aquí el cambio importante
+    outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
-  server: {
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
-  },
-}));
+});
+
 
