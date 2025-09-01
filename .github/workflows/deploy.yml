@@ -5,53 +5,95 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-      
+          cache: "npm"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build static site
-        run: npm run build:static
+
+      - name: Debug: show repo layout & package.json snippets
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Root listing:"
+          ls -la
+          echo "client listing (if exists):"
+          ls -la client || true
+          echo "Root package.json (if exists):"
+          [ -f package.json ] && sed -n '1,200p' package.json || echo "no package.json in root"
+          echo "client/package.json (if exists):"
+          [ -f client/package.json ] && sed -n '1,200p' client/package.json || echo "no client/package.json"
+
+      - name: Install & Build (auto-detect location of build:static)
         env:
           NODE_ENV: production
-      
+        run: |
+          set -euo pipefail
+
+          # helper to check if package.json has build:static
+          has_build_static() {
+            node -e "try{const p=require(process.argv[1]); console.log(!!(p.scripts && p.scripts['build:static']));}catch(e){console.log(false)}" "$1"
+          }
+
+          echo "Checking root package.json..."
+          if [ -f package.json ] && [ "$(has_build_static ./package.json)" = "true" ]; then
+            echo "Found build:static in root package.json"
+            if [ -f package-lock.json ]; then
+              echo "Using npm ci (found package-lock.json)"
+              npm ci
+            else
+              echo "No package-lock.json: using npm install"
+              npm install
+            fi
+            echo "Running build:static in root"
+            npm run build:static
+            exit 0
+          fi
+
+          echo "Checking client/package.json..."
+          if [ -f client/package.json ] && [ "$(has_build_static ./client/package.json)" = "true" ]; then
+            echo "Found build:static in client/package.json"
+            if [ -f client/package-lock.json ]; then
+              echo "Using npm ci --prefix client (found client/package-lock.json)"
+              npm ci --prefix client
+            else
+              echo "No client/package-lock.json: using npm install --prefix client"
+              npm install --prefix client
+            fi
+            echo "Running build:static in client/"
+            npm --prefix client run build:static
+            exit 0
+          fi
+
+          echo "ERROR: No script 'build:static' found in root or client/package.json"
+          echo "Ensure your package.json defines: \"build:static\": \"vite build\" (or update workflow)"
+          exit 1
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/public
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
