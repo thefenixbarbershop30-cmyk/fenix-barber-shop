@@ -7,11 +7,12 @@ import carlosManuelImg from "@assets/Barbero Carlos Manuel_1756685200542.jpg";
 import kevinEliasImg from "@assets/Barbero Kevin Elías_1756685200552.jpg";
 import jailSmithImg from "@assets/Barbero Jail Smith_1756685200548.jpg";
 import davierEliasImg from "@assets/Barbero Davier Elías_1756685200545.jpg";
-import corteNormalImg from "@assets/Servicio Corte Normal_1756685200559.jpg";
-import barbaImg from "@assets/Cejas_1756685200555.jpg";
+import corteNormalImg from "@assets/Servicio Corte Normal_1756686165941.jpg";
+import barbaImg from "@assets/Barba_1756686090763.jpg";
 import disenoImg from "@assets/Diseño_1756685200556.jpg";
 import tinteImg from "@assets/Tinte_1756685200561.jpg";
 import mechasImg from "@assets/Mechas_1756685200558.jpg";
+import logoFenix from "@assets/Logo the Fenix Barber_1756686174479.jpg";
 
 export default function Home() {
   useEffect(() => {
@@ -66,7 +67,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <i className="fas fa-cut text-golden text-2xl"></i>
+              <img src={logoFenix} alt="The Fenix Barber Shop Logo" className="w-8 h-8 object-contain" />
               <h1 className="text-2xl font-bold text-golden">The Fenix Barber Shop</h1>
             </div>
             
