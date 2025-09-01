@@ -7,12 +7,12 @@ import carlosManuelImg from "@assets/Barbero Carlos Manuel_1756685200542.jpg";
 import kevinEliasImg from "@assets/Barbero Kevin Elías_1756685200552.jpg";
 import jailSmithImg from "@assets/Barbero Jail Smith_1756685200548.jpg";
 import davierEliasImg from "@assets/Barbero Davier Elías_1756685200545.jpg";
-import corteNormalImg from "@assets/Servicio Corte Normal_1756686165941.jpg";
+import corteNormalImg from "@assets/Servicio Corte Normal_1756686850118.jpg";
 import barbaImg from "@assets/Barba_1756686090763.jpg";
 import disenoImg from "@assets/Diseño_1756685200556.jpg";
 import tinteImg from "@assets/Tinte_1756685200561.jpg";
 import mechasImg from "@assets/Mechas_1756685200558.jpg";
-import logoFenix from "@assets/Logo the Fenix Barber_1756686174479.jpg";
+import logoFenix from "@assets/Nuevo Logo_1756686857055.png";
 
 export default function Home() {
   useEffect(() => {
