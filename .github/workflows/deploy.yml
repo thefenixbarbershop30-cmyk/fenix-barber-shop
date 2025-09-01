@@ -22,28 +22,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+      
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
+      
       - name: Install dependencies
         run: npm ci
-
+      
       - name: Build static site
         run: npm run build:static
         env:
           NODE_ENV: production
-
+      
+      - name: Create 404.html for SPA routing
+        run: cp dist/index.html dist/404.html
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist   # 👈 aquí el cambio: Vite genera en dist/
+          path: dist
 
   deploy:
     environment:
