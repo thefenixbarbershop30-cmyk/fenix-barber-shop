@@ -24,7 +24,7 @@ export default defineConfig(async () => ({
   },
   root: resolve(__dirname, "client"),
   build: {
-    outDir: resolve(__dirname, "dist"), // 👈 aquí el cambio
+    outDir: resolve(__dirname, "dist"), // 👈 aquí el cambio importante
     emptyOutDir: true,
   },
   server: {
@@ -34,3 +34,4 @@ export default defineConfig(async () => ({
     },
   },
 }));
+
